@@ -56,7 +56,8 @@
 
         </ul>
 
-        <h2 id = "table">Таблица</h2>
+        <h2>Таблица</h2>
+        <div id = "table">
         <table>
             <tr>
                 <th>№</th>
@@ -67,14 +68,17 @@
             </tr>
             
             <tr>
-                <td rowspan="2">1</td>
-                <td rowspan="2">Иванов И.И.</td>
-                <td rowspan="2">17</td>
-                <td rowspan="2">ГУО-103</td>
+                <td rowspan="3">1</td>
+                <td rowspan="3">Иванов И.И.</td>
+                <td rowspan="3">17</td>
+                <td rowspan="3">ГУО-103</td>
                 <td>Python</td>
             </tr>
             <tr>
                 <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>PHP</td>
             </tr>
             <tr>
                 <td>2</td>
@@ -130,9 +134,11 @@
             </tr>
 
         </table>
+        </div>
 
 
-        <h2 id="form">Форма</h2>
+        <h2>Форма</h2>
+        <div id="form">
         <form action="#" method="post">
             <label> ФИО: <input type="text" name="fio" required></label><br><br>
             <label> Телефон: <input type = "tel" name="phone" placeholder="+7(999)123-45-67" required></label><br><br>
@@ -166,6 +172,7 @@
             <label><input type="checkbox" name = "contract" required>С контрактом ознакомлен(а)</label><br><br>
             <input type="submit" value="Сохранить">
         </form>
+        </div>
     </main>
     <footer>
         <p>© Aam-Shaegar 2025</p>

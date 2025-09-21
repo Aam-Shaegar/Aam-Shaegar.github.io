@@ -9,7 +9,7 @@ header{
     text-align: center;
 }
 header .logo{
-    height: 80px;
+    width: 80px;
     height: auto;
     display: block;
     margin: 0 auto 10px;
@@ -37,27 +37,32 @@ main{
     margin: 0 auto;
     padding: 0 15px;
 }
-table{
+#table table{
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
 
-th{
+#table th{
     background-color: #ddd;
     padding: 10px;
 }
-td{
+#table td{
     border: 1px solid #999;
     padding: 10px;
 }
 
-tr:nth-child(even){
+#table tr:nth-child(even){
     background-color: #f9f9f9;
 }
-tr:nth-child(odd){
-    background-color: #fff;
+#table tr:nth-child(odd){
+    background-color: #ddd;
 }
+#form{
+    margin: 30px 0;
+    text-align: left;
+}
+
 footer{
     background-color: #828282;
     text-align: center;
