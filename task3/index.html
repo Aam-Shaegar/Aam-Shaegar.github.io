@@ -2,186 +2,196 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Задание номер 2</title>
+    <title>Задание номер 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="header-top">
-            <img src="imageLogo.png" alt = "Логотип" class="logo">
-            <h1>Задание 3</h1>
+        <div class="header-top container">
+                <img src="imageLogo.png" alt = "Логотип" class="logo">
+                <h1>Задание 3</h1>
         </div>
-        <nav>
-            <a href="#hrefs">Список ссылок</a>
-            <a href="#table">Таблица</a>
-            <a href="#form">Форма</a>
+        <nav class = "nav_outer">
+            <div class="nav-inner container">
+                <a href="#hrefs" class="nav-link">Список ссылок</a>
+                <a href="#table" class="nav-link">Таблица</a>
+                <a href="#form" class="nav-link">Форма</a>
+            </div>
         </nav>
     </header>
     <main>
-        <div class="content">
-            <section id ="hrefs">
-                <h2>Список ссылок</h2>
-                <ul>
-                    <li> <a href="http://kubsu.ru/">КубГу(http)</a></li>
-                    <li> <a href="https://kubsu.ru/">КубГу(https)</a></li>
-                    <li> <a href="https://kubsu.ru/"><img src="image.jpg" alt="КубГу" width="224" height="168"></a></li>
-                    <li> <a href="/about">Внутренняя страница</a></li>
-                    <li> <a href="/">Главная</a></li>
-                    <li><a href="#form">Ссылка на сегмент текущей страницы(Переход к форме)</a></li>
-                    <li><a href="https://example.com/search?name=ivan&age=20&city=krasnodar">Ссылка с 3 параметрами</a></li>
-                    <li><a href="https://example.com/page?id=123"> Ссылка с id</a></li>
-                    <li><a href="page.html">Страница в текущем каталоге</a></li>
-                    <li><a href="about/page.html">Относительная ссылка на страницу в каталоге about</a></li>
-                    <li><a href="../page.html">Относительная ссылка на страницу на уровень выше</a></li>
-                    <li><a href="../../page.html">Относительная ссылка на страницу на два уровня выше</a></li>
-                    <li><p>Тут текст, а внутри <a href="https://kubsu.ru/">контекстная ссылка</a>.</p></li>
-                    <li><a href="https://ru.wikipedia.org/wiki/HTML#История">Ссылка на фрагмент Википедии</a></li>
-                    <li>
-                        <img src="image.jpg" alt="КубГу" width="224" height="168" usemap="#my-map">
+        <div class = "container">
+            <div class="content">
+                <section id ="hrefs">
+                    <h2>Список ссылок</h2>
+                    <ul>
+                        <li> <a href="http://kubsu.ru/">КубГу(http)</a></li>
+                        <li> <a href="https://kubsu.ru/">КубГу(https)</a></li>
+                        <li> <a href="https://kubsu.ru/"><img src="image.jpg" alt="КубГу" width="224" height="168"></a></li>
+                        <li> <a href="/about">Внутренняя страница</a></li>
+                        <li> <a href="/">Главная</a></li>
+                        <li><a href="#form">Ссылка на сегмент текущей страницы(Переход к форме)</a></li>
+                        <li><a href="https://example.com/search?name=ivan&age=20&city=krasnodar">Ссылка с 3 параметрами</a></li>
+                        <li><a href="https://example.com/page?id=123"> Ссылка с id</a></li>
+                        <li><a href="page.html">Страница в текущем каталоге</a></li>
+                        <li><a href="about/page.html">Относительная ссылка на страницу в каталоге about</a></li>
+                        <li><a href="../page.html">Относительная ссылка на страницу на уровень выше</a></li>
+                        <li><a href="../../page.html">Относительная ссылка на страницу на два уровня выше</a></li>
+                        <li><p>Тут текст, а внутри <a href="https://kubsu.ru/">контекстная ссылка</a>.</p></li>
+                        <li><a href="https://ru.wikipedia.org/wiki/HTML#История">Ссылка на фрагмент Википедии</a></li>
+                        <li>
+                            <img src="image.jpg" alt="КубГу" width="224" height="168" usemap="#my-map">
 
-                        <map name="my-map">
-                            <area shape="rect" coords="0,0,112,168" href="https://kubsu.ru/" alt="Ссылка 1 (КубГу)">
-                            <area shape="circle" coords="170,80,40" href="https://example.com" alt="Ссылка 2 (Example)">
-                        </map>
-                    </li>
+                            <map name="my-map">
+                                <area shape="rect" coords="0,0,112,168" href="https://kubsu.ru/" alt="Ссылка 1 (КубГу)">
+                                <area shape="circle" coords="170,80,40" href="https://example.com" alt="Ссылка 2 (Example)">
+                            </map>
+                        </li>
 
 
-                    <li><a href = "">Ссылка с пустым href</a></li>
-                    <li><a>ссылка без href</a></li>
-                    <li><a href="https://example.com" rel="nofollow">Запрещено для перехода поисковикам</a></li>
-                    <li><a href="https://example.com" rel="nofollow noindex">Запрещено для индексации</a></li>
-                    <li>
-                        <ol>
-                            <li><a href = "https://kubsu.ru/" title="Главная КубГУ">КубГу</a></li>
-                            <li><a href="https://example.com" title="Пример сайта">Example</a></li>
-                        </ol>
-                    </li>
-                    <li><a href = "ftp://user:password@ftp.example.com/file.txt">FTP с авторизацией</a></li>
+                        <li><a href = "">Ссылка с пустым href</a></li>
+                        <li><a>ссылка без href</a></li>
+                        <li><a href="https://example.com" rel="nofollow">Запрещено для перехода поисковикам</a></li>
+                        <li><a href="https://example.com" rel="nofollow noindex">Запрещено для индексации</a></li>
+                        <li>
+                            <ol>
+                                <li><a href = "https://kubsu.ru/" title="Главная КубГУ">КубГу</a></li>
+                                <li><a href="https://example.com" title="Пример сайта">Example</a></li>
+                            </ol>
+                        </li>
+                        <li><a href = "ftp://user:password@ftp.example.com/file.txt">FTP с авторизацией</a></li>
 
-                </ul>
-            </section>
+                    </ul>
+                </section>
         
 
-            <section id = "table">
-                <h2>Таблица</h2>
-                <table>
-                    <tr>
-                        <th>№</th>
-                        <th>Имя</th>
-                        <th>Возраст</th>
-                        <th>Группа</th>
-                        <th>Рабочий язык программирования</th>
-                    </tr>
-                    
-                    <tr>
-                        <td rowspan="3">1</td>
-                        <td rowspan="3">Иванов И.И.</td>
-                        <td rowspan="3">17</td>
-                        <td rowspan="3">ГУО-103</td>
-                        <td>Python</td>
-                    </tr>
-                    <tr>
-                        <td>JavaScript</td>
-                    </tr>
-                    <tr>
-                        <td>PHP</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Петров П.П.</td>
-                        <td>17</td>
-                        <td>ГУО-102</td>
-                        <td>Pascal</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">3</td>
-                        <td rowspan="3">Сидоров С.С.</td>
-                        <td rowspan="3">24</td>
-                        <td rowspan="3">ГЕП-808</td>
-                        <td>C++</td>
-                    </tr>
-                    <tr>
-                        <td>Golang</td>
-                    </tr>
-                    <tr>
-                        <td>Java</td>
-                    </tr>
+                <section id = "table" class="section-card">
+                    <h2>Таблица</h2>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>Имя</th>
+                                <th>Возраст</th>
+                                <th>Группа</th>
+                                <th>Рабочий язык программирования</th>
+                            </tr>
+                            
+                            <tr>
+                                <td rowspan="3">1</td>
+                                <td rowspan="3">Иванов И.И.</td>
+                                <td rowspan="3">17</td>
+                                <td rowspan="3">ГУО-103</td>
+                                <td>Python</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                            </tr>
+                            <tr>
+                                <td>PHP</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Петров П.П.</td>
+                                <td>17</td>
+                                <td>ГУО-102</td>
+                                <td>Pascal</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">3</td>
+                                <td rowspan="3">Сидоров С.С.</td>
+                                <td rowspan="3">24</td>
+                                <td rowspan="3">ГЕП-808</td>
+                                <td>C++</td>
+                            </tr>
+                            <tr>
+                                <td>Golang</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                            </tr>
 
-                    <tr>
-                        <td>4</td>
-                        <td>Кузнецов К.К.</td>
-                        <td>17</td>
-                        <td>ГУО-101</td>
-                        <td>C#</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">5</td>
-                        <td rowspan="2">Васильев В.В.</td>
-                        <td rowspan="2">18</td>
-                        <td rowspan="2">ГЕП-208</td>
-                        <td>Assembly</td>
-                    </tr>
-                    <tr>
-                        <td>Swift</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Морозов М.М.</td>
-                        <td>19</td>
-                        <td>ГЕП-308</td>
-                        <td>Haskell</td>
-                    </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Кузнецов К.К.</td>
+                                <td>17</td>
+                                <td>ГУО-101</td>
+                                <td>C#</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">5</td>
+                                <td rowspan="2">Васильев В.В.</td>
+                                <td rowspan="2">18</td>
+                                <td rowspan="2">ГЕП-208</td>
+                                <td>Assembly</td>
+                            </tr>
+                            <tr>
+                                <td>Swift</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Морозов М.М.</td>
+                                <td>19</td>
+                                <td>ГЕП-308</td>
+                                <td>Haskell</td>
+                            </tr>
 
-                    <tr>
-                        <td>7</td>
-                        <td>Зайцев З.З.</td>
-                        <td>20</td>
-                        <td colspan="2"> Отчислен с позором</td>
-                    </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Зайцев З.З.</td>
+                                <td>20</td>
+                                <td colspan="2"> Отчислен с позором</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </div>
 
-                </table>
+            <section id="form">
+                <h2>Форма</h2>
+                <div id = "form" class="section-card">
+                    <form action="#" method="post">
+                        <label> ФИО: <input type="text" name="fio" placeholder="Иванов Иван Иванович" required></label><br><br>
+                        <label> Телефон: <input type = "tel" name="phone" placeholder="+7(999)123-45-67" required></label><br><br>
+                        <label> Email: <input type="email" name="email" placeholder="Ivanov@example.com" required></label><br><br>
+                        <label> Дата рождения: <input type="date" name="birthdate" required></label><br><br>
+
+                        Пол:
+                        <label><input type="radio" name="gender" value="male" required> Мужской</label>
+                        <label><input type="radio" name="gender" value="female" required> Женский</label>
+                        <br><br>
+
+                        <label> 
+                            Любимые языки программирования:
+                            <select name = "languages[]" multiple size="5" required>
+                                <option>Pascal</option>
+                                <option>C</option>
+                                <option>C++</option>
+                                <option>JavaScript</option>
+                                <option>PHP</option>
+                                <option>Python</option>
+                                <option>Java</option>
+                                <option>Haskell</option>
+                                <option>Clojure</option>
+                                <option>Prolog</option>
+                                <option>Scala</option>
+                            </select>
+                        </label>
+                        <br><br>
+
+                        <label> Биография: <br> <textarea name="bio" rows="5" cols="40" placeholder="Расскажите, как пришли к такому выбору?"></textarea></label><br><br>
+                        <label><input type="checkbox" name = "contract" required>С контрактом ознакомлен(а)</label><br><br>
+                        <input type="submit" value="Сохранить">
+                    </form>
+                </div>
             </section>
         </div>
-
-        <section id="form">
-            <h2>Форма</h2>
-            <form action="#" method="post">
-                <label> ФИО: <input type="text" name="fio" required></label><br><br>
-                <label> Телефон: <input type = "tel" name="phone" placeholder="+7(999)123-45-67" required></label><br><br>
-                <label> Email: <input type="email" name="email" required></label><br><br>
-                <label> Дата рождения: <input type="date" name="birthdate" required></label><br><br>
-
-                Пол:
-                <label><input type="radio" name="gender" value="male" required> Мужской</label>
-                <label><input type="radio" name="gender" value="female" required> Женский</label>
-                <br><br>
-
-                <label> 
-                    Любимый язык программирования:
-                    <select name = "languages[]" multiple size="5" required>
-                        <option>Pascal</option>
-                        <option>C</option>
-                        <option>C++</option>
-                        <option>JavaScript</option>
-                        <option>PHP</option>
-                        <option>Python</option>
-                        <option>Java</option>
-                        <option>Haskell</option>
-                        <option>Clojure</option>
-                        <option>Prolog</option>
-                        <option>Scala</option>
-                    </select>
-                </label>
-                <br><br>
-
-                <label> Биография: <br> <textarea name="bio" rows="5" cols="40"></textarea></label><br><br>
-                <label><input type="checkbox" name = "contract" required>С контрактом ознакомлен(а)</label><br><br>
-                <input type="submit" value="Сохранить">
-            </form>
-        </section>
     </main>
     <footer>
-        <p>© Aam-Shaegar 2025</p>
+        <div class="container">
+            <p>© Aam-Shaegar 2025</p>
+        </div>
     </footer>
 </body>
 </html>
