@@ -81,6 +81,7 @@ main {
 }
 
 #table table {
+    order: -1;
     width: 100%;
     border-collapse: collapse;
     margin: 0;
