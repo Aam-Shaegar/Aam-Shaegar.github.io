@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+task4/node_modules/
+task4/dist/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
