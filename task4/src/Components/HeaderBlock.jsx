@@ -12,53 +12,58 @@ export default function HeaderBlock() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <Header style={{ backgroundColor: "#d9d9d9", padding: 0 }}>
-      {/* Внешний Row - создает структуру сетки на всю ширину */}
-      <Row style={{ backgroundColor: "#d9d9d9" }}>
-        {/* Offset колонки - создают отступ слева, как у Main */}
-        <Col xs={1} sm={2} md={3} lg={4} xl={5} />
-        
-        {/* Контентная область - точно такая же ширина как у Main */}
-        <Col xs={22} sm={20} md={18} lg={16} xl={14}>
-          {/* Внутренний Row с логотипом и заголовком */}
-          <Row align="middle" style={{ padding: "12px 0" }}>
-            <Col xs={6} sm={4} md={3} lg={2}>
-              <img
-                src="/imageLogo.png"
-                alt="Логотип"
-                style={{
-                  width: 90,
-                  height: 90,
-                  objectFit: "contain",
-                  borderRadius: "50%",
-                  background: "rgba(0,0,0,0.05)",
-                  display: "block"
-                }}
-              />
-            </Col>
-            <Col xs={18} sm={20} md={21} lg={22} style={{ textAlign: "center" }}>
-              <h1
-                style={{
-                  fontSize: 36,
-                  fontWeight: "bold",
-                  margin: 0,
-                  color: "#000",
-                }}
-              >
-                Задание 4
-              </h1>
-            </Col>
-          </Row>
-        </Col>
-        
-        {/* Offset колонки справа - балансируют отступ */}
-        <Col xs={1} sm={2} md={3} lg={4} xl={5} />
-      </Row>
+  const LogoAndTitle = () => (
+    <Row
+      align="middle"
+      style={{
+        padding: "12px 0",
+        paddingLeft: isMobile ? "0" : "12px",
+        backgroundColor: "#d9d9d9",
+      }}
+    >
+      <Col xs={6} sm={6} md={3} lg={2}>
+        <img
+          src="/imageLogo.png"
+          alt="Логотип"
+          style={{
+            width: 90,
+            height: 90,
+            objectFit: "contain",
+            borderRadius: "50%",
+            background: "rgba(0,0,0,0.05)",
+            display: "block",
+            marginLeft: isMobile ? "12px" : "0"
+          }}
+        />
+      </Col>
+      <Col xs={18} sm={18} md={21} lg={22}>
+        <h1
+          style={{
+            fontSize: 36,
+            fontWeight: "bold",
+            margin: 0,
+            color: "#000",
+            textAlign: isMobile ? "right" : "left",
+            marginRight: isMobile ? "12px" : "0"
+          }}
+        >
+          Задание 4
+        </h1>
+      </Col>
+    </Row>
+  );
 
-      {/* Меню остается на всю ширину экрана */}
+  const Navigation = () => (
+    <div 
+      style={{
+        backgroundColor: "#d9d9d9",
+        paddingRight: isMobile ? 0 : "12px",
+        paddingTop: "8px",
+        paddingBottom: "14px"
+      }}
+    >
       <Menu
-        mode={isMobile ? "inline" : "horizontal"} 
+        mode={isMobile ? "inline" : "horizontal"}
         theme="light"
         style={{
           fontSize: 18,
@@ -66,7 +71,7 @@ export default function HeaderBlock() {
           backgroundColor: "#d9d9d9",
           borderBottom: "none",
           display: "flex",
-          justifyContent: isMobile ? "flex-start" : "center",
+          justifyContent: isMobile ? "flex-start" : "flex-end",
           flexDirection: isMobile ? "column" : "row",
           paddingLeft: isMobile ? "24px" : "0",
         }}
@@ -75,6 +80,22 @@ export default function HeaderBlock() {
         <Menu.Item key="table">Таблица</Menu.Item>
         <Menu.Item key="form">Форма</Menu.Item>
       </Menu>
+    </div>
+  );
+
+  return (
+    <Header style={{ backgroundColor: "#d9d9d9", padding: 0, height: "auto"}}>
+      {isMobile ? (
+        <>
+          <LogoAndTitle />
+          <Navigation />
+        </>
+      ) : (
+        <>
+          <Navigation />
+          <LogoAndTitle />
+        </>
+      )}
     </Header>
   );
 }
