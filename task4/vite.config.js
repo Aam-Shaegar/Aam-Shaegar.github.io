@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Aam-Shaegar.github.io/task4/',
+  base: '/task4/',
 })
