@@ -23,7 +23,7 @@ export default function HeaderBlock() {
     >
       <Col xs={6} sm={6} md={3} lg={2}>
         <img
-          src="/imageLogo.png"
+          src="imageLogo.png"
           alt="Логотип"
           style={{
             width: 90,
