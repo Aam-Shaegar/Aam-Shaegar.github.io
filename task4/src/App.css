@@ -1,0 +1,17 @@
+/* Mobile First - базовые значения */
+.links-section-col {
+  order: 0;
+}
+.table-section-col {
+  order: -1; /* таблица первая на мобилке */
+}
+
+/* Desktop - меняем порядок */
+@media (min-width: 768px) {
+  .links-section-col {
+    order: -1; /* ссылки первые */
+  }
+  .table-section-col {
+    order: 0; /* таблица вторая */
+  }
+}
