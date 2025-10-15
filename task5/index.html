@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор стоимости заказа</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Калькулятор заказа</h1>
+    <label for="product">Выберите товар:</label>
+    <select id="product">
+      <option value="1000">Ноутбук — 1000 ₽</option>
+      <option value="500">Клавиатура — 500 ₽</option>
+      <option value="200">Мышь — 200 ₽</option>
+    </select>
+
+    <label for="quantity">Количество:</label>
+    <input type="text" id="quantity" placeholder="Введите число" required>
+
+    <button id="calculate">Рассчитать</button>
+
+    <p id="result"></p>
+  </main>
+</body>
+</html>
