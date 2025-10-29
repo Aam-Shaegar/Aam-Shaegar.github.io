@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Калькулятор стоимости услуги</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Калькулятор стоимости услуги</h1>
+
+    <form id="calculator" novalidate>
+      <fieldset>
+        <legend>Тип услуги</legend>
+        <label><input type="radio" name="type" value="1" checked> Тип 1 — Базовый</label>
+        <label><input type="radio" name="type" value="2"> Тип 2 — С опциями</label>
+        <label><input type="radio" name="type" value="3"> Тип 3 — С дополнительным свойством</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Количество</legend>
+        <label for="quantity">Количество:</label>
+        <input id="quantity" name="quantity" type="text"
+               inputmode="numeric" autocomplete="off"
+               placeholder="Например, 3" required>
+        <div id="quantity-error" aria-live="polite"></div>
+      </fieldset>
+
+      <fieldset id="options-fieldset" style="display:none;">
+        <legend>Опции (для типа 2)</legend>
+        <label for="option-select">Опция:</label>
+        <select id="option-select">
+          <option value="0">Стандарт (+0)</option>
+          <option value="50">Премиум (+50)</option>
+          <option value="120">VIP (+120)</option>
+        </select>
+      </fieldset>
+
+      <fieldset id="property-fieldset" style="display:none;">
+        <legend>Свойство (для типа 3)</legend>
+        <label><input id="property-checkbox" type="checkbox"> Срочное выполнение (+200)</label>
+      </fieldset>
+    </form>
+
+    <section aria-live="polite">
+      <p id="result">Стоимость: —</p>
+    </section>
+  </main>
+</body>
+</html>
