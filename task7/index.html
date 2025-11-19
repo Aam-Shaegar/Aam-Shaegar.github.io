@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Карусель</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <h1>Карусель жаб</h1>
+
+    <div class="carousel">
+      <button id="btn-prev" class="nav" aria-label="Предыдущий">‹</button>
+
+      <div class="viewport" id="viewport">
+        <div class="track" id="track"></div>
+      </div>
+
+      <button id="btn-next" class="nav" aria-label="Следующий">›</button>
+    </div>
+
+    <div class="dots" id="dots" aria-hidden="false"></div>
+
+    <div id="source" style="display:none;">
+      <img src="img1.jpg" alt="1">
+      <img src="img2.jpg" alt="2">
+      <img src="img3.jpg" alt="3">
+      <img src="img4.jpg" alt="4">
+      <img src="img5.jpg" alt="5">
+      <img src="img6.jpg" alt="6">
+      <img src="img7.jpg" alt="7">
+      <img src="img8.jpg" alt="8">
+    </div>
+  </main>
+</body>
+</html>
