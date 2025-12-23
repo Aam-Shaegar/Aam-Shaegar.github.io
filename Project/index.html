@@ -9,93 +9,91 @@
 </head>
 <body>
 
-  <!-- Фоновое видео -->
+
   <video autoplay muted loop playsinline class="video-bg">
     <source src="media/video.mp4" type="video/mp4">
     Ваш браузер не поддерживает видео.
   </video>
 
- <!-- Верхняя панель (меню) -->
 <div class="top-bar">
   <div class="nav-container">
-    <!-- Логотип слева -->
+
     <a href="#" class="logo">
       <img src="media/drupal-coder.svg" alt="Drupal-coder" class="logo-img">
     </a>
 
-    <!-- Основное горизонтальное меню (для десктопа) -->
+
     <ul class="nav-menu">
-      <li><a href="#support" class="active">ПОДДЕРЖКА DRUPAL</a></li> <!-- Изменено -->
+      <li><a href="#support" class="active">ПОДДЕРЖКА DRUPAL</a></li> 
       <li>
-        <a href="#administration">АДМИНИСТРИРОВАНИЕ</a> <!-- Изменено -->
+        <a href="#administration">АДМИНИСТРИРОВАНИЕ</a> 
         <ul class="dropdown-menu">
-          <li><a href="#migration">МИГРАЦИЯ</a></li> <!-- Изменено -->
-          <li><a href="#backups">БЭКАПЫ</a></li> <!-- Изменено -->
-          <li><a href="#security">АУДИТ БЕЗОПАСНОСТИ</a></li> <!-- Изменено -->
-          <li><a href="#optimization">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li> <!-- Изменено -->
-          <li><a href="#https">ПЕРЕЕЗД НА HTTPS</a></li> <!-- Изменено -->
+          <li><a href="#migration">МИГРАЦИЯ</a></li> 
+          <li><a href="#backups">БЭКАПЫ</a></li> 
+          <li><a href="#security">АУДИТ БЕЗОПАСНОСТИ</a></li> 
+          <li><a href="#optimization">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li> 
+          <li><a href="#https">ПЕРЕЕЗД НА HTTPS</a></li> 
         </ul>
       </li>
-      <li><a href="#promotion">ПРОДВИЖЕНИЕ</a></li> <!-- Изменено -->
-      <li><a href="#advertising">РЕКЛАМА</a></li> <!-- Изменено -->
+      <li><a href="#promotion">ПРОДВИЖЕНИЕ</a></li> 
+      <li><a href="#advertising">РЕКЛАМА</a></li> 
       <li>
-        <a href="#about">О НАС</a> <!-- Изменено -->
+        <a href="#about">О НАС</a> 
         <ul class="dropdown-menu">
-          <li><a href="#history">НАША ИСТОРИЯ</a></li> <!-- Изменено -->
-          <li><a href="#team">КОМАНДА</a></li> <!-- Изменено -->
-          <li><a href="#reviews">ОТЗЫВЫ</a></li> <!-- Изменено -->
-          <li><a href="#portfolio">ПОРТФОЛИО</a></li> <!-- Изменено -->
+          <li><a href="#history">НАША ИСТОРИЯ</a></li> 
+          <li><a href="#team">КОМАНДА</a></li> 
+          <li><a href="#reviews">ОТЗЫВЫ</a></li> 
+          <li><a href="#portfolio">ПОРТФОЛИО</a></li> 
         </ul>
       </li>
-      <li><a href="#projects">ПРОЕКТЫ</a></li> <!-- Изменено -->
-      <li><a href="#contacts">КОНТАКТЫ</a></li> <!-- Изменено -->
+      <li><a href="#projects">ПРОЕКТЫ</a></li> >
+      <li><a href="#contacts">КОНТАКТЫ</a></li>
     </ul>
 
-    <!-- Кнопка вызова мобильного меню (только для мобильных) -->
+
     <button class="mobile-menu-toggle" aria-label="Открыть меню">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
 
-    <!-- Мобильное выпадающее меню (скрыто по умолчанию) -->
+  
     <nav class="mobile-nav-menu">
       <ul>
-        <li><a href="#support" class="active">ПОДДЕРЖКА DRUPAL</a></li> <!-- Изменено -->
+        <li><a href="#support" class="active">ПОДДЕРЖКА DRUPAL</a></li> 
         <li>
           <button class="dropdown-toggle">АДМИНИСТРИРОВАНИЕ ▼</button>
           <ul class="dropdown-submenu">
-            <li><a href="#migration">МИГРАЦИЯ</a></li> <!-- Изменено -->
-            <li><a href="#backups">БЭКАПЫ</a></li> <!-- Изменено -->
-            <li><a href="#security">АУДИТ БЕЗОПАСНОСТИ</a></li> <!-- Изменено -->
-            <li><a href="#optimization">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li> <!-- Изменено -->
-            <li><a href="#https">ПЕРЕЕЗД НА HTTPS</a></li> <!-- Изменено -->
+            <li><a href="#migration">МИГРАЦИЯ</a></li> 
+            <li><a href="#backups">БЭКАПЫ</a></li> 
+            <li><a href="#security">АУДИТ БЕЗОПАСНОСТИ</a></li> 
+            <li><a href="#optimization">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li> 
+            <li><a href="#https">ПЕРЕЕЗД НА HTTPS</a></li> 
           </ul>
         </li>
-        <li><a href="#promotion">ПРОДВИЖЕНИЕ</a></li> <!-- Изменено -->
-        <li><a href="#advertising">РЕКЛАМА</a></li> <!-- Изменено -->
+        <li><a href="#promotion">ПРОДВИЖЕНИЕ</a></li> 
+        <li><a href="#advertising">РЕКЛАМА</a></li> 
         <li>
           <button class="dropdown-toggle">О НАС ▼</button>
           <ul class="dropdown-submenu">
-            <li><a href="#history">НАША ИСТОРИЯ</a></li> <!-- Изменено -->
-            <li><a href="#team">КОМАНДА</a></li> <!-- Изменено -->
-            <li><a href="#reviews">ОТЗЫВЫ</a></li> <!-- Изменено -->
-            <li><a href="#portfolio">ПОРТФОЛИО</a></li> <!-- Изменено -->
+            <li><a href="#history">НАША ИСТОРИЯ</a></li> 
+            <li><a href="#team">КОМАНДА</a></li>
+            <li><a href="#reviews">ОТЗЫВЫ</a></li> 
+            <li><a href="#portfolio">ПОРТФОЛИО</a></li> 
           </ul>
         </li>
-        <li><a href="#projects">ПРОЕКТЫ</a></li> <!-- Изменено -->
-        <li><a href="#contacts">КОНТАКТЫ</a></li> <!-- Изменено -->
+        <li><a href="#projects">ПРОЕКТЫ</a></li> 
+        <li><a href="#contacts">КОНТАКТЫ</a></li> 
       </ul>
     </nav>
   </div>
 </div>
 
-  <!-- Основной контент шапки -->
   <div class="main-content">
     <div class="hero-text">
       <h1>Поддержка сайтов на Drupal</h1>
       <p>Сопровождение и поддержка сайтов на CMS Drupal любых версий и запущенности</p>
-      <a href="#pricing" class="btn">ТАРИФЫ</a> <!-- Изменено -->
+      <a href="#pricing" class="btn">ТАРИФЫ</a> 
     </div>
 
     <div class="stats">
@@ -139,55 +137,46 @@
     </div>
   </div>
 
-  <!-- Блок ниже шапки -->
-  <section class="services-section" id="support"> <!-- Добавлен id -->
+  <section class="services-section" id="support"> 
     <h2>13 лет совершенствуем компетенции в Друпал поддержке!</h2>
     <p>Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн</p>
 
     <div class="services-grid">
-      <!-- Карточка 1 -->
       <div class="service-item">
         <img src="media/competency-1.svg" alt="Добавление информации" class="service-icon">
         <div class="service-title">Добавление информации на сайт, создание новых разделов</div>
       </div>
 
-      <!-- Карточка 2 -->
       <div class="service-item">
         <img src="media/competency-2.svg" alt="Разработка модулей" class="service-icon">
         <div class="service-title">Разработка и оптимизация модулей сайта</div>
       </div>
 
-      <!-- Карточка 3 -->
       <div class="service-item">
         <img src="media/competency-3.svg" alt="Интеграция CRM" class="service-icon">
         <div class="service-title">Интеграция с CRM, 1С, платежными системами, любыми веб-сервисами</div>
       </div>
 
-      <!-- Карточка 4 -->
       <div class="service-item">
         <img src="media/competency-4.svg" alt="Доработки" class="service-icon">
         <div class="service-title">Любые доработки функционала и дизайна</div>
       </div>
 
-      <!-- Карточка 5 -->
       <div class="service-item">
         <img src="media/competency-5.svg" alt="Аудит безопасности" class="service-icon">
         <div class="service-title">Аудит и мониторинг безопасности Drupal сайтов</div>
       </div>
 
-      <!-- Карточка 6 -->
       <div class="service-item">
         <img src="media/competency-6.svg" alt="Миграция" class="service-icon">
         <div class="service-title">Миграция, импорт контента и апгрейд Drupal</div>
       </div>
 
-      <!-- Карточка 7 -->
       <div class="service-item">
         <img src="media/competency-7.svg" alt="Оптимизация" class="service-icon">
         <div class="service-title">Оптимизация и ускорение Drupal-сайтов</div>
       </div>
 
-      <!-- Карточка 8 -->
       <div class="service-item">
         <img src="media/competency-8.svg" alt="Веб-маркетинг" class="service-icon">
         <div class="service-title">Веб-маркетинг, консультации и работы по SEO</div>
@@ -195,12 +184,10 @@
     </div>
   </section>
 
-  <!-- Новый блок: Поддержка от Drupal-coder -->
-  <section class="support-section" id="administration"> <!-- Добавлен id -->
+  <section class="support-section" id="administration"> 
     <h2>Поддержка от Drupal-coder</h2>
 
     <section class="support-grid">
-      <!-- Карточка 1 -->
       <div class="support-card">
         <div class="card-number">01.</div>
         <div class="card-title">Постановка задачи по Email</div>
@@ -208,7 +195,6 @@
         <img src="media/support1.svg" alt="Галочка" class="card-icon">
       </div>
 
-      <!-- Карточка 2 -->
       <div class="support-card">
         <div class="card-number">02.</div>
         <div class="card-title">Система Helpdesk – отчетность, прозрачность</div>
@@ -216,7 +202,6 @@
         <img src="media/support2.svg" alt="Стрелка" class="card-icon">
       </div>
 
-      <!-- Карточка 3 -->
       <div class="support-card">
         <div class="card-number">03.</div>
         <div class="card-title">Расширенная техническая поддержка</div>
@@ -224,7 +209,6 @@
         <img src="media/support3.svg" alt="Круг" class="card-icon">
       </div>
 
-      <!-- Карточка 4 -->
       <div class="support-card">
         <div class="card-number">04.</div>
         <div class="card-title">Персональный менеджер проекта</div>
@@ -232,7 +216,6 @@
         <img src="media/support4.svg" alt="Пользователь" class="card-icon">
       </div>
 
-      <!-- Карточка 5 -->
 <div class="support-card bottom-card">
   <div class="card-number">05.</div>
   <div class="card-title">Удобные способы оплаты</div>
@@ -240,7 +223,6 @@
   <img src="media/support5.svg" alt="Деньги" class="card-icon">
 </div>
 
-<!-- Карточка 6 -->
 <div class="support-card bottom-card">
   <div class="card-number">06.</div>
   <div class="card-title">Работаем с SLA и NDA</div>
@@ -248,7 +230,6 @@
   <img src="media/support6.svg" alt="Документ" class="card-icon">
 </div>
 
-<!-- Карточка 7 -->
 <div class="support-card bottom-card">
   <div class="card-number">07.</div>
   <div class="card-title">Штатные специалисты</div>
@@ -256,7 +237,6 @@
   <img src="media/support7.svg" alt="Команда" class="card-icon">
 </div>
 
-<!-- Карточка 8 -->
 <div class="support-card bottom-card">
   <div class="card-number">08.</div>
   <div class="card-title">Удобные каналы связи</div>
@@ -265,10 +245,8 @@
 </div>
 </section>
 
-  <!-- Блок "Экспертиза в Drupal" -->
-  <section class="expertise-section" id="about"> <!-- Добавлен id -->
+  <section class="expertise-section" id="about"> 
     <div class="expertise-content">
-      <!-- Ноутбук слева, снизу -->
       <div class="expertise-image">
         <img src="media/laptop.png" alt="Дашборд Drupal">
       </div>
@@ -293,13 +271,11 @@
     </div>
   </section>
 
-<!-- Блок "Тарифы" -->
-<section class="pricing-section" id="pricing"> <!-- Добавлен id -->
+<section class="pricing-section" id="pricing"> 
   <div class="pricing-bg"></div>
   <div class="pricing-content">
     <h2 class="pricing-title">Тарифы</h2>
     <div class="pricing-cards">
-      <!-- Карточка Стартовый -->
       <div class="pricing-card">
         <h3 class="pricing-card-title">Стартовый</h3>
         <ul class="pricing-features">
@@ -308,10 +284,9 @@
           <li>Неиспользованные оплаченные часы переносятся на следующий месяц</li>
           <li>Предоплата от 6 000 рублей в месяц</li>
         </ul>
-        <a href="#contacts" class="pricing-btn">СВЯЖИТЕСЬ С НАМИ!</a> <!-- Изменено -->
+        <a href="#contacts" class="pricing-btn">СВЯЖИТЕСЬ С НАМИ!</a>
       </div>
 
-      <!-- Карточка Бизнес -->
       <div class="pricing-card pricing-card-highlight">
         <h3 class="pricing-card-title">Бизнес</h3>
         <ul class="pricing-features">
@@ -321,10 +296,9 @@
           <li>Неиспользованные оплаченные часы не переносятся</li>
           <li>Предоплата от 30 000 рублей в месяц</li>
         </ul>
-        <a href="#contacts" class="pricing-btn pricing-btn-highlight">СВЯЖИТЕСЬ С НАМИ!</a> <!-- Изменено -->
+        <a href="#contacts" class="pricing-btn pricing-btn-highlight">СВЯЖИТЕСЬ С НАМИ!</a> 
       </div>
 
-      <!-- Карточка VIP -->
       <div class="pricing-card">
         <h3 class="pricing-card-title">VIP</h3>
         <ul class="pricing-features">
@@ -334,37 +308,33 @@
           <li>Неиспользованные оплаченные часы не переносятся</li>
           <li>Предоплата от 270 000 рублей в месяц</li>
         </ul>
-        <a href="#contacts" class="pricing-btn">СВЯЖИТЕСЬ С НАМИ!</a> <!-- Изменено -->
+        <a href="#contacts" class="pricing-btn">СВЯЖИТЕСЬ С НАМИ!</a> 
       </div>
     </div>
 
     <div class="pricing-footer">
       <p>Вам не подходят наши тарифы? Оставьте заявку и мы предложим вам индивидуальные условия!</p>
-      <a href="#contacts" class="pricing-footer-link">ПОЛУЧИТЬ ИНДИВИДУАЛЬНЫЙ ТАРИФ</a> <!-- Изменено -->
+      <a href="#contacts" class="pricing-footer-link">ПОЛУЧИТЬ ИНДИВИДУАЛЬНЫЙ ТАРИФ</a> 
     </div>
   </div>
 </section>
 
-<!-- Блок "Наши профессиональные разработчики" -->
 <section class="developers-section">
   <div class="developers-content">
     <h2 class="developers-title">Наши профессиональные разработчики выполняют быстро любые задачи</h2>
     <div class="developers-cards">
-      <!-- Карточка 1 -->
       <div class="developers-card">
         <img src="media/competency-20.svg" alt="Настройка событий CA" class="developers-icon">
         <div class="developers-time">от 1ч</div>
         <div class="developers-desc">Настройка событий CA в интернет-магазине</div>
       </div>
 
-      <!-- Карточка 2 -->
       <div class="developers-card">
         <img src="media/competency-21.svg" alt="Разработка мобильной версии" class="developers-icon">
         <div class="developers-time">от 20ч</div>
         <div class="developers-desc">Разработка мобильной версии сайта</div>
       </div>
 
-      <!-- Карточка 3 -->
       <div class="developers-card">
         <img src="media/competency-22.svg" alt="Интеграция модуля оплаты" class="developers-icon">
         <div class="developers-time">от 8ч</div>
@@ -374,56 +344,48 @@
   </div>
 </section>
 
-<!-- Блок "Команда" -->
-<section class="team-section" id="team"> <!-- Добавлен id -->
+<section class="team-section" id="team"> 
   <div class="team-content">
     <h2 class="team-title">Команда</h2>
     <div class="team-grid">
-      <!-- Член команды 1 -->
       <div class="team-member">
         <img src="media/IMG_2472_0.jpg" alt="Сергей Синица" class="team-photo">
         <div class="team-name">Сергей Синица</div>
         <div class="team-role">Руководитель отдела веб-разработки, канд. техн. наук, заместитель директора</div>
       </div>
 
-      <!-- Член команды 2 -->
       <div class="team-member">
         <img src="media/IMG_2539_0.jpg" alt="Роман Арабеков" class="team-photo">
         <div class="team-name">Роман Арабеков</div>
         <div class="team-role">Руководитель отдела DevOPS, директор</div>
       </div>
 
-      <!-- Член команды 3 -->
       <div class="team-member">
         <img src="media/IMG_2474_1.jpg" alt="Алексей Синица" class="team-photo">
         <div class="team-name">Алексей Синица</div>
         <div class="team-role">Руководитель отдела поддержки сайтов</div>
       </div>
 
-      <!-- Член команды 4 -->
       <div class="team-member">
         <img src="media/IMG_2522_0.jpg" alt="Дарья Бочкарева" class="team-photo">
         <div class="team-name">Дарья Бочкарева</div>
         <div class="team-role">Руководитель отдела продвижения, контекстной рекламы и контент-поддержки сайтов</div>
       </div>
 
-      <!-- Член команды 5 -->
       <div class="team-member">
         <img src="media/IMG_9971_16.jpg" alt="Ирина Торкунова" class="team-photo">
         <div class="team-name">Ирина Торкунова</div>
         <div class="team-role">Менеджер по работе с клиентами</div>
       </div>
     </div>
-    <a href="#about" class="team-btn">ВСЯ КОМАНДА</a> <!-- Изменено -->
+    <a href="#about" class="team-btn">ВСЯ КОМАНДА</a> 
   </div>
 </section>
 
-<!-- Блок "Последние кейсы" -->
-<section class="cases-section" id="projects"> <!-- Добавлен id -->
+<section class="cases-section" id="projects"> 
   <div class="cases-content">
     <h2 class="cases-title">Последние кейсы</h2>
     <div class="cases-grid">
-      <!-- Карточка 1 -->
       <div class="case-card">
         <img src="media/it.jpg" alt="Настройка кэширования данных" class="case-image">
         <div class="case-text">
@@ -433,7 +395,6 @@
         </div>
       </div>
 
-      <!-- Карточка 2 -->
       <div class="case-card">
         <img src="media/diagram.jpg" alt="Использование отчетов Ecommerce" class="case-image">
         <div class="case-text">
@@ -443,7 +404,6 @@
         </div>
       </div>
 
-      <!-- Карточка 3 -->
       <div class="case-card">
         <img src="media/conversy.jpg" alt="Повышение конверсии страницы" class="case-image">
         <div class="case-text">
@@ -453,7 +413,6 @@
         </div>
       </div>
 
-      <!-- Карточка 4 -->
       <div class="case-card">
         <img src="media/clock.jpg" alt="Drupal 7: ускорение времени генерации" class="case-image">
         <div class="case-text">
@@ -463,7 +422,6 @@
         </div>
       </div>
 
-      <!-- Карточка 5 -->
       <div class="case-card">
         <img src="media/logo.webp" alt="Обмен товарами и заказами" class="case-image">
         <div class="case-text">
@@ -476,12 +434,10 @@
   </div>
 </section>
 
-<!-- Блок "Отзывы" -->
-<section class="reviews-section" id="reviews"> <!-- Добавлен id -->
+<section class="reviews-section" id="reviews"> 
   <div class="reviews-content">
     <h2 class="reviews-title">Отзывы</h2>
     <div class="review-slider">
-      <!-- Отзыв 1 -->
       <div class="review-item active">
         <div class="review-logo">
           <img src="media/logo_0.png" alt="CIEL" class="review-logo-img">
@@ -494,7 +450,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 2 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/logo_1.png" alt="Логотип компании" class="review-logo-img">
@@ -507,7 +462,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 3 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/logo_2.png" alt="Логотип компании" class="review-logo-img">
@@ -520,7 +474,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 4 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/cableman_ru.png" alt="Логотип компании" class="review-logo-img">
@@ -533,7 +486,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 5 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/nashagazeta_ch.png" alt="Логотип компании" class="review-logo-img">
@@ -546,7 +498,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 6 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/lpcma_rus_v4.jpg" alt="Логотип компании" class="review-logo-img">
@@ -559,7 +510,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 7 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/farbors_ru.jpg" alt="Логотип компании" class="review-logo-img">
@@ -572,7 +522,6 @@
         </div>
       </div>
 
-      <!-- Отзыв 8 -->
       <div class="review-item">
         <div class="review-logo">
           <img src="media/logo-estee.png" alt="Логотип компании" class="review-logo-img">
@@ -594,49 +543,38 @@
   </div>
 </section>
 
-<!-- Блок "С нами работают" -->
 <section class="clients-section">
   <div class="clients-content">
     <h2 class="clients-title">С нами работают</h2>
     <p class="clients-desc">Десятки компаний доверяют нам самое ценное, что у них есть в интернете — свои сайты. Мы делаем всё, чтобы наше сотрудничество было долгим.</p>
     <div class="clients-grid">
-      <!-- Логотип 1 -->
       <div class="client-logo">
         <img src="media/ad.png" alt="Логотип клиента 1" class="client-img">
       </div>
-      <!-- Логотип 2 -->
       <div class="client-logo">
         <img src="media/bp.jfif" alt="Логотип клиента 2" class="client-img">
       </div>
-      <!-- Логотип 3 -->
       <div class="client-logo">
         <img src="media/ch.jfif" alt="Логотип клиента 3" class="client-img">
       </div>
-      <!-- Логотип 4 -->
       <div class="client-logo">
         <img src="media/chiz.jfif" alt="Логотип клиента 4" class="client-img">
       </div>
-      <!-- Логотип 5 -->
       <div class="client-logo">
         <img src="media/nvidia.png" alt="Логотип клиента 5" class="client-img">
       </div>
-      <!-- Логотип 6 -->
       <div class="client-logo">
         <img src="media/pin.png" alt="Логотип клиента 6" class="client-img">
       </div>
-      <!-- Логотип 7 -->
       <div class="client-logo">
         <img src="media/psm.jfif" alt="Логотип клиента 7" class="client-img">
       </div>
-      <!-- Логотип 8 -->
       <div class="client-logo">
         <img src="media/ros.png" alt="Логотип клиента 8" class="client-img">
       </div>
-      <!-- Логотип 9 -->
       <div class="client-logo">
         <img src="media/sams.png" alt="Логотип клиента 9" class="client-img">
       </div>
-      <!-- Логотип 10 -->
       <div class="client-logo">
         <img src="media/1c.png" alt="Логотип клиента 10" class="client-img">
       </div>
@@ -644,12 +582,10 @@
   </div>
 </section>
 
-<!-- Блок "FAQ" -->
 <section class="faq-section">
   <div class="faq-content">
     <h2 class="faq-title">FAQ</h2>
     <div class="faq-list">
-      <!-- Вопрос 1 (выделен красной рамкой) -->
       <div class="faq-item active">
         <div class="faq-question">1. Кто непосредственно занимается поддержкой?</div>
         <div class="faq-answer">
@@ -657,7 +593,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 2 -->
       <div class="faq-item">
         <div class="faq-question">2. Как организована работа поддержки?</div>
         <div class="faq-answer">
@@ -665,7 +600,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 3 -->
       <div class="faq-item">
         <div class="faq-question">3. Что происходит, когда отработаны все предоплаченные часы за месяц?</div>
         <div class="faq-answer">
@@ -673,7 +607,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 4 -->
       <div class="faq-item">
         <div class="faq-question">4. Что происходит, когда не отработаны все предоплаченные часы за месяц?</div>
         <div class="faq-answer">
@@ -681,7 +614,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 5 -->
       <div class="faq-item">
         <div class="faq-question">5. Как происходит оценка и согласование планируемого времени на выполнение заявок?</div>
         <div class="faq-answer">
@@ -689,7 +621,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 6 -->
       <div class="faq-item">
         <div class="faq-question">6. Сколько программистов выделяется на проект?</div>
         <div class="faq-answer">
@@ -697,7 +628,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 7 -->
       <div class="faq-item">
         <div class="faq-question">7. Как подать заявку на внесение изменений на сайте?</div>
         <div class="faq-answer">
@@ -705,7 +635,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 8 -->
       <div class="faq-item">
         <div class="faq-question">8. Как подать заявку на добавление пользователя, изменение настроек веб-сервера и других задач по администрированию?</div>
         <div class="faq-answer">
@@ -713,7 +642,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 9 -->
       <div class="faq-item">
         <div class="faq-question">9. В течение какого времени начинается работа по заявке?</div>
         <div class="faq-answer">
@@ -721,7 +649,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 10 -->
       <div class="faq-item">
         <div class="faq-question">10. В какое время работает поддержка?</div>
         <div class="faq-answer">
@@ -729,7 +656,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 11 -->
       <div class="faq-item">
         <div class="faq-question">11. Подходят ли услуги поддержки, если необходимо произвести обновление ядра Drupal или модулей?</div>
         <div class="faq-answer">
@@ -737,7 +663,6 @@
         </div>
       </div>
 
-      <!-- Вопрос 12 -->
       <div class="faq-item">
         <div class="faq-question">12. Можно ли пообщаться со специалистом голосом или в мессенджере?</div>
         <div class="faq-answer">
@@ -766,10 +691,8 @@
     </div>
     
     <div class="contact-form-right">
-      <!-- ✅ ПРАВИЛЬНЫЕ ID ДЛЯ SCRIPT.JS -->
       <form id="contact-form" class="contact-form" novalidate>
         
-        <!-- ✅ Элемент для статуса (ОБЯЗАТЕЛЬНО!) -->
         <p id="form-status" class="form-status"></p>
         
         <div class="form-group">
@@ -824,14 +747,12 @@
           </label>
         </div>
         
-        <!-- ✅ ПРАВИЛЬНЫЙ ID ДЛЯ КНОПКИ -->
         <button type="submit" id="submit-btn" class="form-submit">ОТПРАВИТЬ</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- Подвал -->
 <footer class="footer">
   <div class="footer-content">
     <p>Проект ООО «Инитлаб», Краснодар, Россия.</p>

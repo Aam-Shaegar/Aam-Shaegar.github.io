@@ -1,17 +1,13 @@
-
-
-
-/* Логотип как изображение */
 .logo {
   display: block;
   width: auto;
-  height: 40px; /* Высота логотипа */
+  height: 40px; 
 }
 
 .logo-img {
   width: auto;
   height: 100%;
-  max-width: 200px; /* Максимальная ширина */
+  max-width: 200px; 
   object-fit: contain;
 }
 
@@ -142,7 +138,7 @@
   background: #ff4d4d;
 }
 
-/* Подвал */
+/* Footer */
 .footer {
   background: #0f0c13;
   padding: 2rem 2rem 1rem;
@@ -367,7 +363,7 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
-  height: 400px; /* Фиксированная высота */
+  height: 400px; 
 }
 
 .case-image {
@@ -1148,10 +1144,10 @@
       line-height: 1.5;
     }
 
-    /* Новый блок: Поддержка от Drupal-coder */
+    /* Поддержка от Drupal-coder */
     .support-section {
       background: white;
-      padding: 4rem 2rem 6rem; /* Увеличили нижний отступ, чтобы карточки могли "залезать" */
+      padding: 4rem 2rem 6rem; 
       color: #1a1a3a;
       position: relative;
       z-index: 10;
@@ -1232,7 +1228,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      align-items: flex-start; /* Изменили на flex-start, чтобы ноутбук был внизу */
+      align-items: flex-start; 
       gap: 3rem;
       position: relative;
     }
@@ -1241,7 +1237,6 @@
       flex: 0 0 400px;
       position: relative;
       z-index: 20;
-      /*bottom: -200px;*/  
     }
 
     .expertise-image img {
@@ -1249,15 +1244,12 @@
       height: auto;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       position: relative;
-      /*bottom: -200px;*/  
       z-index: 20;
     }
 
-    /* Ноутбук выходит за пределы контейнера вниз */
     .expertise-image img {
       position: relative;
       top: 0;
-      /*bottom: -200px; */
       z-index: 20;
     }
 
@@ -1290,11 +1282,10 @@
       line-height: 1.6;
     }
 
-    /* Стиль для "залезающих" нижних карточек */
     .bottom-card {
       position: relative;
       z-index: 20;
-      margin-top: rem; /* Карточки 5-8 залезают на тёмный фон */
+      margin-top: rem; 
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
@@ -1354,7 +1345,6 @@
     flex: 0 0 100%;
   }
 
-  /* Убираем "залезание" карточек на мобильных */
   .support-card:nth-child(n+5) {
     margin-top: 0;
   }
@@ -1437,16 +1427,14 @@
     transform: translateY(0);
   }
 
-  /* Убираем все лишние стили для тарифов — они уже заданы выше */
   
   
 }
 
 /* === МОБИЛЬНОЕ МЕНЮ === */
 
-/* Стили для кнопки гамбургера */
 .mobile-menu-toggle {
-  display: none; /* Сначала скрываем */
+  display: none; 
   flex-direction: column;
   background: none;
   border: none;
@@ -1463,14 +1451,14 @@
   transition: all 0.3s ease;
 }
 
-/* Стили для выпадающего мобильного меню */
+
 .mobile-nav-menu {
   position: fixed;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100vh;
-  background: #0f0c13; /* Темный фон, как на картинке */
+  background: #0f0c13; 
   z-index: 999;
   overflow-y: auto;
   transition: left 0.3s ease;
@@ -1518,7 +1506,6 @@
   color: #ff6b6b;
 }
 
-/* Стили для подменю */
 .dropdown-submenu {
   display: none;
   padding-left: 1rem;
@@ -1548,21 +1535,19 @@
   content: '▲';
 }
 
-/* === АДАПТИВНЫЙ ДИЗАЙН — ТОЛЬКО ДЛЯ МОБИЛЬНЫХ === */
+
 
 @media (max-width: 768px) {
 
-  /* Скрываем основное горизонтальное меню */
+
   .nav-menu {
     display: none;
   }
 
-  /* Показываем кнопку гамбургера */
   .mobile-menu-toggle {
     display: flex;
   }
 
-  /* Настройки верхней панели для мобильных */
   .top-bar {
     padding: 1rem;
     justify-content: space-between;
@@ -1578,7 +1563,6 @@
     gap: 0.25rem;
   }
 
-  /* Основной контент шапки — делаем более компактным */
   .main-content {
     padding: 6rem 1rem 2rem;
     flex-direction: column;
@@ -1608,7 +1592,7 @@
   margin-bottom: 15px;
   border-radius: 4px;
   text-align: center;
-  display: none; /* Скрыт по умолчанию */
+  display: none; 
   font-weight: 500;
   font-size: 0.9rem;
 }
@@ -1634,7 +1618,6 @@
   display: block;
 }
 
-/* Disabled состояние кнопки при отправке */
 .form-submit:disabled {
   background: #999;
   cursor: not-allowed;

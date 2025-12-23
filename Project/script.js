@@ -1,11 +1,8 @@
-/* === ГЛАВНЫЙ ОБРАБОТЧИК === */
 document.addEventListener('DOMContentLoaded', function() {
   
-  // ===== КОНСТАНТЫ =====
   const FORM_ENDPOINT = "https://api.slapform.com/ypHAtTsSt";
   const STORAGE_KEY = "drupalFormData:v1";
   
-  // ===== МОБИЛЬНОЕ МЕНЮ (DESKTOP) =====
   if (window.innerWidth <= 992) {
     const dropdownItems = document.querySelectorAll('.nav-menu > li');
 
@@ -33,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // ===== МОБИЛЬНОЕ МЕНЮ (HAMBURGER) =====
+
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileNavMenu = document.querySelector('.mobile-nav-menu');
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -75,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // ===== СЛАЙДЕР ОТЗЫВОВ =====
+
   const reviewItems = document.querySelectorAll('.review-item');
   const prevBtn = document.querySelector('.review-prev');
   const nextBtn = document.querySelector('.review-next');
@@ -106,24 +103,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // ===== FAQ АККОРДЕОН =====
+  
   document.querySelectorAll('.faq-question').forEach((question) => {
     question.addEventListener('click', () => {
       const item = question.closest('.faq-item');
       
-      // Закрываем все остальные
+    
       document.querySelectorAll('.faq-item').forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
         }
       });
       
-      // Переключаем текущий
+  
       item.classList.toggle('active');
     });
   });
   
-  // ===== ПЛАВНАЯ ПРОКРУТКА К ЯКОРЯМ =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -134,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
           block: 'start'
         });
         
-        // Закрываем мобильное меню при переходе
         if (mobileNavMenu && mobileNavMenu.classList.contains('active')) {
           mobileNavMenu.classList.remove('active');
         }
@@ -142,9 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // ========================================
-  // ===== ОБРАБОТКА ФОРМЫ =====
-  // ========================================
+
   
   const contactForm = document.getElementById('contact-form');
   
@@ -166,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
   
-  // ===== ФУНКЦИИ РАБОТЫ С LOCALSTORAGE =====
   
   function saveToStorage() {
     try {
@@ -211,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // ===== ВАЛИДАЦИЯ ФОРМЫ =====
   
   function validateForm() {
     hideStatus();
@@ -228,7 +219,6 @@ document.addEventListener('DOMContentLoaded', function() {
       return false;
     }
     
-    // Валидация email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value)) {
       showStatus('Пожалуйста, укажите корректный email', 'error');
@@ -237,7 +227,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (phoneInput && phoneInput.value.trim()) {
-      // Если телефон указан, проверяем его
       const phoneDigits = phoneInput.value.replace(/\D/g, '');
       if (phoneDigits.length < 6) {
         showStatus('Пожалуйста, укажите корректный номер телефона', 'error');
@@ -255,13 +244,11 @@ document.addEventListener('DOMContentLoaded', function() {
     return true;
   }
   
-  // ===== ПОКАЗ/СКРЫТИЕ СТАТУСА =====
   
   function showStatus(message, type) {
     statusEl.textContent = message;
     statusEl.className = `form-status ${type}`;
     
-    // Прокрутка к статусу
     setTimeout(() => {
       statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 100);
@@ -272,7 +259,6 @@ document.addEventListener('DOMContentLoaded', function() {
     statusEl.textContent = '';
   }
   
-  // ===== ОТПРАВКА ФОРМЫ =====
   
   contactForm.addEventListener('submit', async function(ev) {
     ev.preventDefault();
@@ -286,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.disabled = true;
     showStatus('Отправка данных...', 'info');
     
-    // Подготовка данных
     const payload = {
       name: nameInput.value.trim(),
       email: emailInput.value.trim(),
@@ -310,16 +295,13 @@ document.addEventListener('DOMContentLoaded', function() {
         throw new Error(`Сервер вернул ошибку: ${response.status}`);
       }
       
-      // Пытаемся получить JSON ответ
       let data;
       try {
         data = await response.json();
       } catch (e) {
-        // Если ответ не JSON, это тоже OK
         data = { success: true };
       }
       
-      // Успешная отправка
       showStatus('Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
       clearFormAndStorage();
       
@@ -334,7 +316,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // ===== АВТОСОХРАНЕНИЕ ПРИ ВВОДЕ =====
   
   if (nameInput) nameInput.addEventListener('input', saveToStorage);
   if (phoneInput) phoneInput.addEventListener('input', saveToStorage);
@@ -342,14 +323,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (messageInput) messageInput.addEventListener('input', saveToStorage);
   if (consentCheckbox) consentCheckbox.addEventListener('change', saveToStorage);
   
-  // ===== ФОРМАТИРОВАНИЕ ТЕЛЕФОНА =====
   
   if (phoneInput) {
     phoneInput.addEventListener('input', function(e) {
-      // Разрешаем только цифры и символ +
       let value = this.value;
       
-      // Если есть +, оставляем только в начале
       if (value.includes('+')) {
         const parts = value.split('+');
         value = '+' + parts.join('').replace(/\D/g, '');
@@ -361,10 +339,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // ===== ВОССТАНОВЛЕНИЕ ДАННЫХ ПРИ ЗАГРУЗКЕ =====
   restoreFromStorage();
   
   console.log('✅ Форма настроена успешно');
   console.log('📍 Endpoint:', FORM_ENDPOINT);
   
-}); // Конец DOMContentLoaded
+}); 
