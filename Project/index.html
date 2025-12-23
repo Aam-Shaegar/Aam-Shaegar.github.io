@@ -749,55 +749,106 @@
 </section>
 
 <!-- Форма внизу -->
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="6b6ee51b-d7c7-47df-8f81-92ae78547311">
-  <section class="contact-form-section" id="contacts"> <!-- Добавлен id -->
-    <div class="contact-form-content">
-      <div class="contact-form-left">
-        <h2>Оставить заявку на поддержку сайта</h2>
-        <p>Срочно нужна поддержка сайта? Ваша команда не успевает справиться самостоятельно или придуманный подход к поддержке не справляется с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!</p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">📞</span>
-            <span class="contact-text">8 800 222-26-73</span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">✉️</span>
-            <span class="contact-text">info@drupal-coder.ru</span>
-          </div>
+<section class="contact-form-section" id="contact">
+  <div class="contact-form-content">
+    <div class="contact-form-left">
+      <h2>Оставить заявку на поддержку сайта</h2>
+      <p>Срочно нужна поддержка сайта? Ваша команда не успевает справиться самостоятельно или придуманный подход к поддержке не справляется с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <span class="contact-text">8 800 222-26-73</span>
         </div>
-      </div>
-      <div class="contact-form-right">
-        <div class="contact-form">
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-          </div>
-          <div class="form-group">
-            <input type="tel" id="phone" name="phone" placeholder="Телефон" oninput="this.value=this.value.replace(/[^\d]/g,'')" required>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" placeholder="Ваш комментарий" rows="5" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="consent" name="consent" required>
-              Отправляя заявку, я даю согласие на обработку своих персональных данных
-            </label>
-          </div>
-          <div class="form-group">
-            <div class="captcha">
-              <div class="g-recaptcha" data-sitekey="your_recaptcha_site_key"></div>
-            </div>
-          </div>
-          <button type="submit" class="form-submit">СВЯЖИТЕСЬ С НАМИ</button>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-text">info@drupal-coder.ru</span>
         </div>
       </div>
     </div>
-  </section>
-</form>
+    
+
+<section class="contact-form-section" id="contact">
+  <div class="contact-form-content">
+    <div class="contact-form-left">
+      <h2>Оставить заявку на поддержку сайта</h2>
+      <p>Срочно нужна поддержка сайта? Ваша команда не успевает справиться самостоятельно или придуманный подход к поддержке не справляется с работой? Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <span class="contact-text">8 800 222-26-73</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-text">info@drupal-coder.ru</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form-right">
+      <!-- ✅ ПРАВИЛЬНЫЕ ID ДЛЯ SCRIPT.JS -->
+      <form id="contact-form" class="contact-form" novalidate>
+        
+        <!-- ✅ Элемент для статуса (ОБЯЗАТЕЛЬНО!) -->
+        <p id="form-status" class="form-status"></p>
+        
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Ваше имя" 
+            required 
+            maxlength="100"
+          >
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            placeholder="Телефон (необязательно)"
+          >
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="E-mail" 
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <textarea 
+            id="message" 
+            name="message" 
+            placeholder="Ваш комментарий (необязательно)" 
+            rows="5"
+            maxlength="1000"
+          ></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input 
+              type="checkbox" 
+              id="consent" 
+              name="consent" 
+              required
+            >
+            Отправляя заявку, я даю согласие на обработку своих персональных данных
+          </label>
+        </div>
+        
+        <!-- ✅ ПРАВИЛЬНЫЙ ID ДЛЯ КНОПКИ -->
+        <button type="submit" id="submit-btn" class="form-submit">ОТПРАВИТЬ</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- Подвал -->
 <footer class="footer">
