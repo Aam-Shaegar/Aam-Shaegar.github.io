@@ -1,5 +1,4 @@
 /*<!-- Скрипт для мобильного меню -->*/
-
 document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth <= 992) {
     const dropdownItems = document.querySelectorAll('.nav-menu > li');
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* Слайдер отзывов */
 document.addEventListener('DOMContentLoaded', function() {
   const reviewItems = document.querySelectorAll('.review-item');
   const prevBtn = document.querySelector('.review-prev');
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* FAQ аккордеон */
 document.querySelectorAll('.faq-question').forEach((question) => {
   question.addEventListener('click', () => {
     const item = question.closest('.faq-item');
@@ -66,30 +67,27 @@ document.querySelectorAll('.faq-question').forEach((question) => {
   });
 });
 
+/* Мобильное меню */
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileNavMenu = document.querySelector('.mobile-nav-menu');
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-  // Открытие/закрытие основного мобильного меню
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', function() {
       mobileNavMenu.classList.toggle('active');
     });
   }
 
-  // Обработка кликов по кнопкам раскрытия подменю
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function() {
       const submenu = this.nextElementSibling;
       const isActive = submenu.classList.contains('active');
 
-      // Закрываем все другие подменю
       document.querySelectorAll('.dropdown-submenu').forEach(sm => {
         sm.classList.remove('active');
       });
 
-      // Если это не было активно — открываем
       if (!isActive) {
         submenu.classList.add('active');
         this.classList.add('active');
@@ -99,12 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Закрытие меню при клике на ссылку (опционально)
   const navLinks = document.querySelectorAll('.mobile-nav-menu a');
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       mobileNavMenu.classList.remove('active');
-      // Убираем активность со всех подменю
       document.querySelectorAll('.dropdown-submenu').forEach(sm => {
         sm.classList.remove('active');
       });
@@ -115,153 +111,241 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/* === НОВЫЙ КОД ДЛЯ ОТПРАВКИ ФОРМЫ === */
+/* === УЛУЧШЕННАЯ ОБРАБОТКА ФОРМЫ === */
 document.addEventListener('DOMContentLoaded', function() {
-  // Находим форму по ID (у вас форма имеет id="contactForm")
+  const FORM_ENDPOINT = "https://api.slapform.com/ypHAtTsSt";
+  const STORAGE_KEY = "drupalFormData:v1";
+  
   const contactForm = document.getElementById('contactForm');
   
   if (!contactForm) {
-    console.log('Форма не найдена на странице');
+    console.log('Форма не найдена');
     return;
   }
   
-  console.log('Форма найдена, настраиваю обработку...');
+  const nameInput = document.getElementById('name');
+  const phoneInput = document.getElementById('phone');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const consentCheckbox = document.getElementById('consent');
+  const submitBtn = contactForm.querySelector('.form-submit');
   
-  // Создаем элемент для сообщений
-  const formMessage = document.createElement('div');
-  formMessage.id = 'form-message';
-  formMessage.style.cssText = 'margin-top: 15px; padding: 10px; border-radius: 5px; display: none;';
-  contactForm.appendChild(formMessage);
-  
-  // Добавляем honeypot поле для защиты от спама
-  const honeypot = document.createElement('input');
-  honeypot.type = 'text';
-  honeypot.name = 'company';
-  honeypot.style.cssText = 'position: absolute; left: -9999px; opacity: 0;';
-  honeypot.placeholder = 'Не заполняйте это поле';
-  contactForm.appendChild(honeypot);
-  
-  // Функция для показа сообщений
-  function showMessage(text, type) {
-    formMessage.textContent = text;
-    formMessage.style.display = 'block';
-    
-    if (type === 'success') {
-      formMessage.style.backgroundColor = '#d4edda';
-      formMessage.style.color = '#155724';
-      formMessage.style.border = '1px solid #c3e6cb';
-    } else if (type === 'error') {
-      formMessage.style.backgroundColor = '#f8d7da';
-      formMessage.style.color = '#721c24';
-      formMessage.style.border = '1px solid #f5c6cb';
-    }
-    
-    // Автоматически скрываем через 5 секунд
-    setTimeout(() => {
-      formMessage.style.display = 'none';
-    }, 5000);
+  // Создаем элемент для статуса
+  let statusEl = document.getElementById('form-status');
+  if (!statusEl) {
+    statusEl = document.createElement('div');
+    statusEl.id = 'form-status';
+    statusEl.style.cssText = 'margin-top: 15px; padding: 10px; border-radius: 5px; display: none;';
+    contactForm.appendChild(statusEl);
   }
   
-  // Обработчик отправки формы
-  contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
+  /* === ИДЕИ ИЗ ВАШЕГО КОДА === */
+  
+  // 1. Сохранение в localStorage (пользователь не потеряет данные)
+  function saveToStorage() {
+    try {
+      const formData = {
+        name: nameInput?.value || '',
+        phone: phoneInput?.value || '',
+        email: emailInput?.value || '',
+        message: messageInput?.value || '',
+        consent: consentCheckbox?.checked || false
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    } catch (e) {
+      console.log('Не удалось сохранить в localStorage');
+    }
+  }
+  
+  // 2. Восстановление из localStorage
+  function restoreFromStorage() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+      
+      const data = JSON.parse(saved);
+      if (nameInput) nameInput.value = data.name || '';
+      if (phoneInput) phoneInput.value = data.phone || '';
+      if (emailInput) emailInput.value = data.email || '';
+      if (messageInput) messageInput.value = data.message || '';
+      if (consentCheckbox) consentCheckbox.checked = data.consent || false;
+    } catch (e) {
+      console.log('Не удалось восстановить из localStorage');
+    }
+  }
+  
+  // 3. Очистка формы и хранилища
+  function clearFormAndStorage() {
+    contactForm.reset();
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {
+      // Игнорируем ошибки очистки
+    }
+  }
+  
+  // 4. Валидация формы (улучшенная)
+  function validateForm() {
+    statusEl.style.display = 'none';
     
-    console.log('Форма отправляется...');
-    
-    // Проверка honeypot поля
-    if (honeypot.value.trim() !== '') {
-      console.log('Обнаружен спам-бот');
-      showMessage('Обнаружена подозрительная активность', 'error');
-      return;
+    if (!nameInput || !nameInput.value.trim()) {
+      showStatus('Пожалуйста, укажите ваше имя', 'error');
+      nameInput?.focus();
+      return false;
     }
     
-    // Проверяем согласие на обработку данных
-    const consentCheckbox = document.getElementById('consent');
+    if (!phoneInput || !phoneInput.value.trim()) {
+      showStatus('Пожалуйста, укажите телефон', 'error');
+      phoneInput?.focus();
+      return false;
+    }
+    
+    // Простая валидация телефона (хотя бы 5 цифр)
+    const phoneDigits = phoneInput.value.replace(/\D/g, '');
+    if (phoneDigits.length < 5) {
+      showStatus('Пожалуйста, укажите корректный номер телефона', 'error');
+      phoneInput.focus();
+      return false;
+    }
+    
+    if (!emailInput || !emailInput.value.trim()) {
+      showStatus('Пожалуйста, укажите email', 'error');
+      emailInput?.focus();
+      return false;
+    }
+    
+    // Простая валидация email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value)) {
+      showStatus('Пожалуйста, укажите корректный email', 'error');
+      emailInput.focus();
+      return false;
+    }
+    
     if (!consentCheckbox || !consentCheckbox.checked) {
-      showMessage('Необходимо дать согласие на обработку персональных данных', 'error');
+      showStatus('Необходимо согласие на обработку персональных данных', 'error');
+      consentCheckbox?.focus();
+      return false;
+    }
+    
+    return true;
+  }
+  
+  // 5. Показ статуса с цветами
+  function showStatus(message, type) {
+    statusEl.textContent = message;
+    statusEl.style.display = 'block';
+    
+    if (type === 'success') {
+      statusEl.style.backgroundColor = '#d4edda';
+      statusEl.style.color = '#155724';
+      statusEl.style.border = '1px solid #c3e6cb';
+    } else if (type === 'error') {
+      statusEl.style.backgroundColor = '#f8d7da';
+      statusEl.style.color = '#721c24';
+      statusEl.style.border = '1px solid #f5c6cb';
+    }
+  }
+  
+  // 6. Обработчик отправки (асинхронный, как у вас)
+  contactForm.addEventListener('submit', async function(ev) {
+    ev.preventDefault();
+    
+    if (!validateForm()) {
       return;
     }
     
-    // Собираем данные формы
-    const formData = {
-      name: document.getElementById('name')?.value || '',
-      phone: document.getElementById('phone')?.value || '',
-      email: document.getElementById('email')?.value || '',
-      message: document.getElementById('message')?.value || '',
-      consent: true,
-      source: 'Drupal-coder Website',
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
+    
+    // Подготовка данных для отправки
+    const payload = {
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      email: emailInput.value.trim(),
+      message: messageInput?.value.trim() || '',
       timestamp: new Date().toISOString(),
-      // Добавляем дополнительные поля, которые ожидает Slapform
-      subject: 'Заявка с сайта Drupal-coder',
-      website: window.location.href
+      source: window.location.href
     };
     
-    console.log('Данные для отправки:', formData);
-    
-    // Проверяем обязательные поля
-    if (!formData.name || !formData.phone || !formData.email) {
-      showMessage('Пожалуйста, заполните все обязательные поля', 'error');
-      return;
-    }
-    
-    // Сохраняем оригинальный текст кнопки
-    const submitButton = contactForm.querySelector('.form-submit');
-    const originalText = submitButton.textContent;
-    
-    // Меняем текст кнопки и блокируем ее
-    submitButton.textContent = 'Отправка...';
-    submitButton.disabled = true;
-    
     try {
-      console.log('Отправляем запрос на Slapform...');
-      
-      // Отправляем данные на Slapform
-      const response = await fetch('https://api.slapform.com/ypHAtTsSt', {
+      const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
       
-      console.log('Ответ от сервера:', response.status);
-      
-      const result = await response.json();
-      console.log('Результат:', result);
-      
-      if (response.ok) {
-        // Успешная отправка
-        showMessage('✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.', 'success');
-        
-        // Очищаем форму
-        contactForm.reset();
-        
-        // Прокручиваем к сообщению об успехе
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        // Ошибка от сервера Slapform
-        showMessage(`❌ Ошибка отправки: ${result.error || 'Попробуйте еще раз'}`, 'error');
+      if (!response.ok) {
+        throw new Error(`Ошибка сервера: ${response.status}`);
       }
       
+      const data = await response.json();
+      
+      // Успешная отправка
+      showStatus('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+      clearFormAndStorage();
+      
+      // Прокрутка к сообщению об успехе
+      setTimeout(() => {
+        statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+      
     } catch (error) {
-      console.error('Ошибка при отправке формы:', error);
-      showMessage('❌ Ошибка сети. Пожалуйста, попробуйте еще раз.', 'error');
+      console.error('Ошибка отправки формы:', error);
+      showStatus(`Ошибка отправки: ${error.message || 'Попробуйте еще раз'}`, 'error');
     } finally {
-      // Восстанавливаем кнопку
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
   });
   
-  // Обработчик для проверки телефона (опционально)
-  const phoneInput = document.getElementById('phone');
+  // 7. Автосохранение при вводе (как у вас)
+  if (nameInput) nameInput.addEventListener('input', saveToStorage);
+  if (phoneInput) phoneInput.addEventListener('input', saveToStorage);
+  if (emailInput) emailInput.addEventListener('input', saveToStorage);
+  if (messageInput) messageInput.addEventListener('input', saveToStorage);
+  if (consentCheckbox) consentCheckbox.addEventListener('change', saveToStorage);
+  
+  // 8. Восстановление данных при загрузке
+  restoreFromStorage();
+  
+  // 9. Обработчик для телефона (форматирование)
   if (phoneInput) {
     phoneInput.addEventListener('input', function() {
-      // Оставляем только цифры, плюс, скобки и дефисы
-      this.value = this.value.replace(/[^\d\s\+\-\(\)]/g, '');
+      // Сохраняем позицию курсора
+      const cursorPos = this.selectionStart;
+      const originalLength = this.value.length;
+      
+      // Удаляем все нецифровые символы, кроме + в начале
+      let value = this.value;
+      if (value.startsWith('+')) {
+        const plus = '+';
+        const digits = value.substring(1).replace(/\D/g, '');
+        value = plus + digits;
+      } else {
+        value = value.replace(/\D/g, '');
+      }
+      
+      this.value = value;
+      
+      // Восстанавливаем позицию курсора
+      const newLength = this.value.length;
+      const cursorOffset = newLength - originalLength;
+      this.setSelectionRange(cursorPos + cursorOffset, cursorPos + cursorOffset);
+      
+      // Автосохранение
+      saveToStorage();
     });
   }
   
-  console.log('Обработка формы настроена успешно');
+  // 10. Автоматическое определение страны по телефону (опционально)
+  if (phoneInput && !phoneInput.value.startsWith('+')) {
+    phoneInput.value = '+7' + (phoneInput.value || '');
+  }
+  
+  console.log('Форма настроена с улучшениями из вашего кода');
 });
